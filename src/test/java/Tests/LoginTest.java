@@ -42,6 +42,18 @@ public class LoginTest {
         Assert.assertEquals(title,"Web Orders");
         
     }
+
+    @Test
+    public void negativeTest(){
+        driver.get("http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx");
+        driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("test");
+        driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test"+Keys.ENTER);
+
+        String errormessage=driver.findElement(By.id("ctl00_MainContent_status")).getText();
+
+
+        Assert.assertEquals(errormessage,"Invalid Login or Password.");
+    }
 @AfterMethod
     public void cleanUp(){
   driver.close();
