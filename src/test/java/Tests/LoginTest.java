@@ -53,6 +53,7 @@ public class LoginTest {
 
 
         Assert.assertEquals(errormessage,"Invalid Login or Password.");
+        Assert.assertTrue(errormessage.contains("Invalid Login or Password."));
     }
 @AfterMethod
     public void cleanUp(){
