@@ -40,6 +40,7 @@ public class LoginTest {
         driver.findElement(By.id("ctl00_logout")).click();
        String title =driver.getTitle();
         Assert.assertEquals(title,"Web Orders");
+        Assert.assertTrue(title.contains("error");
         
     }
 
